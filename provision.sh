@@ -1,5 +1,7 @@
 #!/bin/bash
 
+_REPO_URL_PREFIX="https://github.com/rc3dmi/provision-scripts/raw/refs/heads/main"
+
 log_info() {
     echo "[INFO] $1"
 }
@@ -39,7 +41,7 @@ _install_eclipse_java() {
     SRC_FILENAME="eclipse-java-${ECLIPSE_REL//\//-}-linux-gtk-x86_64.tar.gz"
 
     SRC_URL="https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/$ECLIPSE_REL/$SRC_FILENAME&r=1"
-    DESKTOP_FILE_URL="https://github.com/rc3dmi/fedora-image/raw/refs/heads/main/sys_files/usr/share/applications/eclipse-java.desktop"
+    DESKTOP_FILE_URL="$_REPO_URL_PREFIX/desktop-files/eclipse-java.desktop"
 
     curl -s -L -o /tmp/eclipse.tar.gz $SRC_URL
 
@@ -71,7 +73,7 @@ _install_eclipse_jee() {
     SRC_FILENAME="eclipse-jee-${ECLIPSE_REL//\//-}-linux-gtk-x86_64.tar.gz"
 
     SRC_URL="https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/$ECLIPSE_REL/$SRC_FILENAME&r=1"
-    DESKTOP_FILE_URL="https://github.com/rc3dmi/fedora-image/raw/refs/heads/main/sys_files/usr/share/applications/eclipse-jee.desktop"
+    DESKTOP_FILE_URL="$_REPO_URL_PREFIX/desktop-files/eclipse-jee.desktop"
 
     curl -s -L -o /tmp/eclipse.tar.gz $SRC_URL
 
@@ -132,6 +134,7 @@ _install_nosql_booster() {
 
     SRC_FILENAME="nosqlbooster4mongo-$BOOSTER_VER.tar.gz"
     SRC_URL="https://s3.nosqlbooster.com/download/releasesv$BOOSTER_VER_MAJ/$SRC_FILENAME"
+    DESKTOP_FILE_URL="$_REPO_URL_PREFIX/desktop-files/nosqlbooster.desktop"
 
     curl -s -L -o /tmp/nosqlbooster4mongo.tar.gz $SRC_URL
 
@@ -140,6 +143,9 @@ _install_nosql_booster() {
 
     tar --no-same-owner -xf /tmp/nosqlbooster4mongo.tar.gz -C /usr/lib/nosqlbooster4mongo --strip-components=1
     ln -s /usr/lib/nosqlbooster4mongo/nosqlbooster4mongo  /usr/bin/nosqlbooster4mongo
+
+    curl -s -L -o /usr/share/applications/nosqlbooster.desktop $DESKTOP_FILE_URL
+    desktop-file-validate /usr/share/applications/nosqlbooster.desktop
 
     # cleanup tmp files to save space
 

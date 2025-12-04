@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=NoSQL Booster
+Icon=nosqlbooster4mongo
+Exec=nosqlbooster4mongo
+Terminal=false
+Type=Application
+Categories=Development;IDE;
+StartupNotify=true
