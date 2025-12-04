@@ -6,7 +6,7 @@ set -ouex pipefail
 
 # TODO: Add desktop icon
 
-IDEA_REL="2025.1.1.1"
+IDEA_REL="2025.2.4"
 
 SRC_FILENAME="ideaIU-$IDEA_REL.tar.gz"
 SRC_URL="https://download.jetbrains.com/idea/$SRC_FILENAME"
