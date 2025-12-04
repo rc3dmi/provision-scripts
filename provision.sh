@@ -21,7 +21,6 @@ _add_repos() {
 
     # rpmfusion and pgadmin repo
     dnf_install \
-        https://ftp.postgresql.org/pub/pgadmin/pgadmin4/yum/pgadmin4-fedora-repo-2-1.noarch.rpm \
         https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
         https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
     
@@ -232,7 +231,8 @@ dnf_install \
 log_install "Postgres packages"
 dnf_install \
     pgmodeler \
-    pgadmin4-desktop
+    pgadmin4 \
+    pgadmin4-qt
 
 log_install "Python packages"
 dnf_install \
