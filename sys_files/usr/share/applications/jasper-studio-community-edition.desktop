@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Jasper Studio Community Edition
+Icon=jasper-studio-community-edition
+Exec=jasper-studio-community-edition
+Terminal=false
+Type=Application
+Categories=Development;IDE;
+StartupNotify=true

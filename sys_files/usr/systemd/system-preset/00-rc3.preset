@@ -1,0 +1,4 @@
+# RC3 specific presets
+
+enable docker.service
+enable hostname-automap.service
