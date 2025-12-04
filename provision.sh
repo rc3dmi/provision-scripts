@@ -50,7 +50,7 @@ _install_eclipse_java() {
 
     tar --no-same-owner -xf /tmp/eclipse.tar.gz -C /tmp
     mv /tmp/eclipse /usr/lib/eclipse-java
-    ln -s /usr/lib/eclipse/eclipse-java /usr/bin/eclipse-java
+    ln -s /usr/lib/eclipse-java/eclipse /usr/bin/eclipse-java
 
     for i in 16 22 24 32 48 64 128 256 512 1024
     do
@@ -80,7 +80,7 @@ _install_eclipse_jee() {
 
     tar --no-same-owner -xf /tmp/eclipse.tar.gz -C /tmp
     mv /tmp/eclipse /usr/lib/eclipse-jee
-    ln -s /usr/lib/eclipse/eclipse-jee /usr/bin/eclipse-jee
+    ln -s /usr/lib/eclipse-jee/eclipse /usr/bin/eclipse-jee
 
     for i in 16 22 24 32 48 64 128 256 512 1024
     do
