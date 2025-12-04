@@ -40,6 +40,7 @@ _install_eclipse_java() {
     SRC_FILENAME="eclipse-java-${ECLIPSE_REL//\//-}-linux-gtk-x86_64.tar.gz"
 
     SRC_URL="https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/$ECLIPSE_REL/$SRC_FILENAME&r=1"
+    DESKTOP_FILE_URL="https://github.com/rc3dmi/fedora-image/raw/refs/heads/main/sys_files/usr/share/applications/eclipse-java.desktop"
 
     curl -s -L -o /tmp/eclipse.tar.gz $SRC_URL
 
@@ -56,6 +57,7 @@ _install_eclipse_java() {
         "/usr/share/icons/hicolor/${i}x${i}/apps/eclipse-java.png"
     done
 
+    curl -s -L -o /usr/share/applications/eclipse-java.desktop $DESKTOP_FILE_URL
     desktop-file-validate /usr/share/applications/eclipse-java.desktop
 
     # cleanup tmp files to save space
@@ -70,6 +72,7 @@ _install_eclipse_jee() {
     SRC_FILENAME="eclipse-jee-${ECLIPSE_REL//\//-}-linux-gtk-x86_64.tar.gz"
 
     SRC_URL="https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/$ECLIPSE_REL/$SRC_FILENAME&r=1"
+    DESKTOP_FILE_URL="https://github.com/rc3dmi/fedora-image/raw/refs/heads/main/sys_files/usr/share/applications/eclipse-jee.desktop"
 
     curl -s -L -o /tmp/eclipse.tar.gz $SRC_URL
 
@@ -86,6 +89,7 @@ _install_eclipse_jee() {
         "/usr/share/icons/hicolor/${i}x${i}/apps/eclipse-jee.png"
     done
 
+    curl -s -L -o /usr/share/applications/eclipse-java.desktop $DESKTOP_FILE_URL
     desktop-file-validate /usr/share/applications/eclipse-jee.desktop
 
     # cleanup tmp files to save space
