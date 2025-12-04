@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e
-
 log_info() {
     echo "[INFO] $1"
 }
