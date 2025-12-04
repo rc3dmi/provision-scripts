@@ -37,7 +37,6 @@ _add_repos() {
 _install_eclipse_java() {
     ### Download and unpack Eclipes IDE
 
-    ECLIPSE_VER="4.35"
     ECLIPSE_REL="2025-09/R"
 
     SRC_FILENAME="eclipse-java-${ECLIPSE_REL//\//-}-linux-gtk-x86_64.tar.gz"
@@ -55,7 +54,7 @@ _install_eclipse_java() {
 
     for i in 16 22 24 32 48 64 128 256 512 1024
     do
-    install -Dm0644 /usr/lib/eclipse-java/plugins/org.eclipse.platform_${ECLIPSE_VER}*/eclipse$i.png \
+    install -Dm0644 /usr/lib/eclipse-java/plugins/org.eclipse.platform_*/eclipse$i.png \
         "/usr/share/icons/hicolor/${i}x${i}/apps/eclipse-java.png"
     done
 
@@ -68,7 +67,6 @@ _install_eclipse_java() {
 _install_eclipse_jee() {
     ### Download and unpack Eclipes IDE
 
-    ECLIPSE_VER="4.35"
     ECLIPSE_REL="2025-09/R"
 
     SRC_FILENAME="eclipse-jee-${ECLIPSE_REL//\//-}-linux-gtk-x86_64.tar.gz"
@@ -86,7 +84,7 @@ _install_eclipse_jee() {
 
     for i in 16 22 24 32 48 64 128 256 512 1024
     do
-    install -Dm0644 /usr/lib/eclipse-jee/plugins/org.eclipse.platform_${ECLIPSE_VER}*/eclipse$i.png \
+    install -Dm0644 /usr/lib/eclipse-jee/plugins/org.eclipse.platform_*/eclipse$i.png \
         "/usr/share/icons/hicolor/${i}x${i}/apps/eclipse-jee.png"
     done
 
