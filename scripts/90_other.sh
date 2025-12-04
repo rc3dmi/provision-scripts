@@ -2,5 +2,10 @@
 
 set -ouex pipefail
 
+# dependencies for maintenance scripts
 dnf install -y \
-    jq
+    jq \
+    tmux
+
+# netbird
+dnf install -y netbird
